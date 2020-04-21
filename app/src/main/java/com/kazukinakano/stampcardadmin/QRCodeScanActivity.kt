@@ -8,6 +8,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.google.firebase.firestore.FirebaseFirestore
@@ -23,6 +24,10 @@ class QRCodeScanActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_qrcode_scan)
+
+        val toolbar = findViewById<Toolbar>(R.id.tool_bar)
+        toolbar.title = getString(R.string.app_name)
+        setSupportActionBar(toolbar)
     }
 
     public override fun onResume() {
